@@ -9,6 +9,7 @@ on:
 env:
   TOKEN: ${{ secrets.TOKEN }}
   SCRIPT_ONE: ${{ secrets.SCRIPT_ONE }}
+  SCRIPT_TWO: ${{ secrets.SCRIPT_TWO }}
 
 jobs:
   run:
@@ -30,3 +31,4 @@ jobs:
         gem install rest-client httparty metainspector gist
         echo $TOKEN >> ~/.gist
         gist -r $SCRIPT_ONE | ruby
+        gist -r $SCRIPT_TWO | ruby
