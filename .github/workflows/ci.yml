@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  schedule:
+    - cron: '*/60 * * * *'
+  workflow_dispatch:
+  push:
+
+env:
+  TOKEN: ${{ secrets.TOKEN }}
+  SCRIPT_ONE: ${{ secrets.SCRIPT_ONE }}
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: ruby/setup-ruby@v1
+      with:
+          ruby-version: '3.2'
+    - name: Delete workflow runs
+      uses: Mattraks/delete-workflow-runs@v2
+      with:
+        retain_days: 1
+        keep_minimum_runs: 1
+    - name: Keep repository actions alive
+      uses: gautamkrishnar/keepalive-workflow@v1
+    - name: Run Script
+      run: |
+        gem install rest-client httparty metainspector gist
+        echo $TOKEN >> ~/.gist
+        gist -r $SCRIPT_ONE | ruby
