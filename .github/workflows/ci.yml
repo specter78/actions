@@ -31,9 +31,9 @@ jobs:
       run: |
         gem install rest-client httparty metainspector gist watir headless
         echo $TOKEN >> ~/.gist
-        echo "Running SCRIPT_ONE\n"
+        echo "Running SCRIPT_ONE"
         gist -r $SCRIPT_ONE | ruby
-        echo "Running SCRIPT_TWO\n"
+        echo "Running SCRIPT_TWO"
         gist -r $SCRIPT_TWO | ruby
-        echo "Running SCRIPT_THREE\n"
+        echo "Running SCRIPT_THREE"
         gist -r $SCRIPT_THREE | ruby
