@@ -10,6 +10,7 @@ env:
   TOKEN: ${{ secrets.TOKEN }}
   SCRIPT_ONE: ${{ secrets.SCRIPT_ONE }}
   SCRIPT_TWO: ${{ secrets.SCRIPT_TWO }}
+  SCRIPT_THREE: ${{ secrets.SCRIPT_THREE }}
 
 jobs:
   run:
@@ -28,7 +29,8 @@ jobs:
       uses: gautamkrishnar/keepalive-workflow@v1
     - name: Run Script
       run: |
-        gem install rest-client httparty metainspector gist
+        gem install rest-client httparty metainspector gist watir headless
         echo $TOKEN >> ~/.gist
         gist -r $SCRIPT_ONE | ruby
         gist -r $SCRIPT_TWO | ruby
+        gist -r $SCRIPT_THREE | ruby
