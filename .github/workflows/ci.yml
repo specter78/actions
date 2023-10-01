@@ -14,6 +14,7 @@ env:
   SCRIPT_FOUR: ${{ secrets.SCRIPT_FOUR }}
   SCRIPT_FIVE: ${{ secrets.SCRIPT_FIVE }}
   SCRIPT_SIX: ${{ secrets.SCRIPT_SIX }}
+  SCRIPT_SEVEN: ${{ secrets.SCRIPT_SEVEN }}
 
 jobs:
   SCRIPT_ONE:
@@ -100,3 +101,16 @@ jobs:
         gem install rest-client httparty metainspector gist watir headless
         echo $TOKEN >> ~/.gist
         gist -r $SCRIPT_SIX | ruby
+
+  SCRIPT_SEVEN:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: ruby/setup-ruby@v1
+      with:
+          ruby-version: '3.2'
+    - name: Run Script
+      run: |
+        gem install rest-client httparty metainspector gist watir headless
+        echo $TOKEN >> ~/.gist
+        gist -r $SCRIPT_SEVEN | ruby
