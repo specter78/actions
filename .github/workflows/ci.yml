@@ -16,7 +16,7 @@ env:
   SCRIPT_SIX: ${{ secrets.SCRIPT_SIX }}
 
 jobs:
-  run:
+  SCRIPT_ONE:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -34,15 +34,69 @@ jobs:
       run: |
         gem install rest-client httparty metainspector gist watir headless
         echo $TOKEN >> ~/.gist
-        echo "Running SCRIPT_ONE"
         gist -r $SCRIPT_ONE | ruby
-        echo "Running SCRIPT_TWO"
+
+  SCRIPT_TWO:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: ruby/setup-ruby@v1
+      with:
+          ruby-version: '3.2'
+    - name: Run Script
+      run: |
+        gem install rest-client httparty metainspector gist watir headless
+        echo $TOKEN >> ~/.gist
         gist -r $SCRIPT_TWO | ruby
-        echo "Running SCRIPT_THREE"
+
+  SCRIPT_THREE:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: ruby/setup-ruby@v1
+      with:
+          ruby-version: '3.2'
+    - name: Run Script
+      run: |
+        gem install rest-client httparty metainspector gist watir headless
+        echo $TOKEN >> ~/.gist
         gist -r $SCRIPT_THREE | ruby
-        echo "Running SCRIPT_FOUR"
+        
+  SCRIPT_FOUR:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: ruby/setup-ruby@v1
+      with:
+          ruby-version: '3.2'
+    - name: Run Script
+      run: |
+        gem install rest-client httparty metainspector gist watir headless
+        echo $TOKEN >> ~/.gist
         gist -r $SCRIPT_FOUR | ruby
-        echo "Running SCRIPT_FIVE"
+        
+  SCRIPT_FIVE:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: ruby/setup-ruby@v1
+      with:
+          ruby-version: '3.2'
+    - name: Run Script
+      run: |
+        gem install rest-client httparty metainspector gist watir headless
+        echo $TOKEN >> ~/.gist
         gist -r $SCRIPT_FIVE | ruby
-        echo "Running SCRIPT_SIX"
+
+  SCRIPT_SIX:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: ruby/setup-ruby@v1
+      with:
+          ruby-version: '3.2'
+    - name: Run Script
+      run: |
+        gem install rest-client httparty metainspector gist watir headless
+        echo $TOKEN >> ~/.gist
         gist -r $SCRIPT_SIX | ruby
