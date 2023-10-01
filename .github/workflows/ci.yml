@@ -12,6 +12,7 @@ env:
   SCRIPT_TWO: ${{ secrets.SCRIPT_TWO }}
   SCRIPT_THREE: ${{ secrets.SCRIPT_THREE }}
   SCRIPT_FOUR: ${{ secrets.SCRIPT_FOUR }}
+  SCRIPT_FIVE: ${{ secrets.SCRIPT_FIVE }}
 
 jobs:
   run:
@@ -40,3 +41,5 @@ jobs:
         gist -r $SCRIPT_THREE | ruby
         echo "Running SCRIPT_FOUR"
         gist -r $SCRIPT_FOUR | ruby
+        echo "Running SCRIPT_FIVE"
+        gist -r $SCRIPT_FIVE | ruby
