@@ -33,7 +33,7 @@ jobs:
       uses: gautamkrishnar/keepalive-workflow@v1
     - name: Run Script
       run: |
-        gem install rest-client httparty metainspector gist watir headless
+        gem install rest-client httparty metainspector gist watir headless mechanize
         echo $TOKEN >> ~/.gist
         gist -r $SCRIPT_ONE | ruby
 
@@ -46,7 +46,7 @@ jobs:
           ruby-version: '3.2'
     - name: Run Script
       run: |
-        gem install rest-client httparty metainspector gist watir headless
+        gem install rest-client httparty metainspector gist watir headless mechanize
         echo $TOKEN >> ~/.gist
         gist -r $SCRIPT_TWO | ruby
 
@@ -59,7 +59,7 @@ jobs:
           ruby-version: '3.2'
     - name: Run Script
       run: |
-        gem install rest-client httparty metainspector gist watir headless
+        gem install rest-client httparty metainspector gist watir headless mechanize
         echo $TOKEN >> ~/.gist
         gist -r $SCRIPT_THREE | ruby
         
@@ -72,7 +72,7 @@ jobs:
           ruby-version: '3.2'
     - name: Run Script
       run: |
-        gem install rest-client httparty metainspector gist watir headless
+        gem install rest-client httparty metainspector gist watir headless mechanize
         echo $TOKEN >> ~/.gist
         gist -r $SCRIPT_FOUR | ruby
         
@@ -85,7 +85,7 @@ jobs:
           ruby-version: '3.2'
     - name: Run Script
       run: |
-        gem install rest-client httparty metainspector gist watir headless
+        gem install rest-client httparty metainspector gist watir headless mechanize
         echo $TOKEN >> ~/.gist
         gist -r $SCRIPT_FIVE | ruby
 
@@ -98,7 +98,7 @@ jobs:
           ruby-version: '3.2'
     - name: Run Script
       run: |
-        gem install rest-client httparty metainspector gist watir headless
+        gem install rest-client httparty metainspector gist watir headless mechanize
         echo $TOKEN >> ~/.gist
         gist -r $SCRIPT_SIX | ruby
 
@@ -111,6 +111,6 @@ jobs:
           ruby-version: '3.2'
     - name: Run Script
       run: |
-        gem install rest-client httparty metainspector gist watir headless
+        gem install rest-client httparty metainspector gist watir headless mechanize
         echo $TOKEN >> ~/.gist
         gist -r $SCRIPT_SEVEN | ruby
