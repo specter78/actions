@@ -2,7 +2,7 @@ name: CI
 
 on:
   schedule:
-    - cron: '*/90 * * * *'
+    - cron: '*/120 * * * *'
   workflow_dispatch:
   push:
 
