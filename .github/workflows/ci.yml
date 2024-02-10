@@ -50,6 +50,7 @@ jobs:
       run: |
         gem install rest-client httparty metainspector gist watir headless mechanize
         echo $TOKEN >> ~/.gist
+        echo $AUTH >> ~/.auth
         gist -r $SCRIPT_TWO | ruby
 
   SCRIPT_THREE:
