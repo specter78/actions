@@ -8,6 +8,7 @@ on:
 
 env:
   TOKEN: ${{ secrets.TOKEN }}
+  AUTH: ${{ secrets.AUTH }}
   SCRIPT_ONE: ${{ secrets.SCRIPT_ONE }}
   SCRIPT_TWO: ${{ secrets.SCRIPT_TWO }}
   SCRIPT_THREE: ${{ secrets.SCRIPT_THREE }}
