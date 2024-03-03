@@ -82,6 +82,7 @@ jobs:
         gist -r $SCRIPT_FOUR | ruby
         
   SCRIPT_FIVE:
+    if: false
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
